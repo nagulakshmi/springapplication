@@ -23,6 +23,22 @@ class ZoneServiceImpl implements ZoneService {
     public Zone addNewZone(Zone zone) {
         return zoneRepository.save(zone);
     }
+
+    @Override
+    public Zone getZoneById(int id) {
+        return zoneRepository.getOne(id);
+    }
+
+    @Override
+    public Zone updateZoneById(int id, Zone zone) {
+        zone.setId(id);
+        return zoneRepository.save(zone);
+    }
+
+    @Override
+    public void deleteZoneById(int id) {
+        zoneRepository.deleteById(id);
+    }
 }
 
 

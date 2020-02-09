@@ -10,5 +10,9 @@ public interface ZoneService {
 
     Zone addNewZone(Zone zone);
 
+    Zone getZoneById(int id);
 
+    Zone updateZoneById(int id , Zone zone);
+
+    void deleteZoneById(int id);
 }

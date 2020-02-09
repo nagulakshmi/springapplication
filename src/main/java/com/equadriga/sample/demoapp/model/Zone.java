@@ -1,19 +1,15 @@
 package com.equadriga.sample.demoapp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "Zone")
-public class Zone {
+public class Zone implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-//    @OneToMany(fetch = FetchType.LAZY, targetEntity = Sapling.class)
-//    @JoinColumn(referencedColumnName = "zoneId")
-//    private List<Sapling> saplingsList;
 
     @Column(name = "name")
     private String name;
@@ -44,12 +40,6 @@ public class Zone {
     public void setWardno(String wardno) {
         this.wardno = wardno;
     }
-
-//    public List<Sapling> getSaplingsList() {
-//        return saplingsList;
-//    }
-//
-//    public void setSaplingsList(List<Sapling> saplingsList) {
-//        this.saplingsList = saplingsList;
-//    }
 }
+
+
